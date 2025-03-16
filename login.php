@@ -34,3 +34,34 @@ include "includes/nav.php";
 <?php 
 include "includes/footer.php";
 ?>
+ <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            let email = document.getElementById('email').value;
+            let password = document.getElementById('password').value;
+            let isValid = true;
+
+            // Clear previous error messages
+            document.getElementById('emailError').textContent = '';
+            document.getElementById('passwordError').textContent = '';
+
+            // Validate email
+            if (!email) {
+                document.getElementById('emailError').textContent = 'البريد الإلكتروني مطلوب.';
+                isValid = false;
+            } else if (!/\S+@\S+\.\S+/.test(email)) {
+                document.getElementById('emailError').textContent = 'البريد الإلكتروني غير صالح.';
+                isValid = false;
+            }
+
+            // Validate password
+            if (!password) {
+                document.getElementById('passwordError').textContent = 'كلمة المرور مطلوبة.';
+                isValid = false;
+            }
+
+            // Prevent form submission if validation fails
+            if (!isValid) {
+                event.preventDefault();
+            }
+        });
+    </script>

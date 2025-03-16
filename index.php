@@ -5,12 +5,6 @@ include "data/connection.php";
 ?>
 
 <div class="container my-5">
-    <!-- <div class="text-center">
-        <h2 class="mb-4">Employee Registration System</h2>
-        <p class="lead">
-
-        </p>
-    </div> -->
     <div class="mt-5">
         <!-- <h3 class="mb-3">All Employees</h3> -->
         <table class="table table-striped">
@@ -31,7 +25,7 @@ include "data/connection.php";
                 $result = $conn->query($sqlSElectEmployees);
                 if ($result->num_rows > 0) {
                     while ($row = $result->fetch_assoc()) {
-                        $empID = htmlspecialchars($row['ID']);
+                        $empID = htmlspecialchars($row['ID']); 
                         $name = htmlspecialchars($row['name']);
                         $email = htmlspecialchars($row['email']);
                         $salary = htmlspecialchars($row['salary']);

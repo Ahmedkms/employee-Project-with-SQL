@@ -17,13 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = sanitizeInput($name);
     $email = sanitizeInput($email);
     $salary = sanitizeInput($salary);
-    // $emp_id = sanitizeInput($emp_id);
-
-    //validate employee id
-    // if (required($emp_id)) {
-    //     $error[] = "employee id is required";
-    // }
-    //validate name
 
     if (required($name)) {
         $error[] = "Full name is required input";
